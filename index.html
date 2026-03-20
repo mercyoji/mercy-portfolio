@@ -6,54 +6,42 @@
 <title>Mercy Oji | Cybersecurity Risk &amp; Governance</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
-:root{
-  --bg:#0a0e15;--bg2:#0f1620;--surface:#141d2b;--border:#1e2d40;
-  --teal:#00c8aa;--teal-dim:rgba(0,200,170,0.1);--teal-glow:rgba(0,200,170,0.35);
-  --gold:#c9a84c;--gold-dim:rgba(201,168,76,0.12);
-  --text:#d8e8f0;--muted:#5e7a92;--light:#8fafc5;
-  --display:'Playfair Display',serif;--body:'DM Sans',sans-serif;--mono:'DM Mono',monospace;
-}
+:root{--bg:#0a0e15;--bg2:#0f1620;--surface:#141d2b;--border:#1e2d40;--teal:#00c8aa;--teal-dim:rgba(0,200,170,0.1);--teal-glow:rgba(0,200,170,0.35);--gold:#c9a84c;--gold-dim:rgba(201,168,76,0.12);--text:#d8e8f0;--muted:#5e7a92;--light:#8fafc5;--display:'Playfair Display',serif;--body:'DM Sans',sans-serif;--mono:'DM Mono',monospace;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:var(--body);font-weight:300;overflow-x:hidden;}
 body::after{content:'';position:fixed;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:999;opacity:.6;}
-
-/* NAV */
 nav{position:fixed;top:0;width:100%;z-index:500;padding:0 5vw;display:flex;justify-content:space-between;align-items:center;height:68px;background:rgba(10,14,21,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
 .nav-brand{display:flex;flex-direction:column;gap:2px;}
 .nav-name{font-family:var(--display);font-size:1rem;font-weight:600;color:var(--text);}
 .nav-title{font-family:var(--mono);font-size:.6rem;color:var(--teal);letter-spacing:.2em;text-transform:uppercase;}
-.nav-links{display:flex;gap:1.8rem;list-style:none;}
-.nav-links a{font-family:var(--mono);font-size:.65rem;letter-spacing:.15em;color:var(--muted);text-decoration:none;text-transform:uppercase;transition:color .25s;}
+.nav-links{display:flex;gap:1.6rem;list-style:none;}
+.nav-links a{font-family:var(--mono);font-size:.62rem;letter-spacing:.15em;color:var(--muted);text-decoration:none;text-transform:uppercase;transition:color .25s;}
 .nav-links a:hover{color:var(--teal);}
-.nav-cta{font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;padding:.5rem 1.2rem;background:transparent;color:var(--teal);border:1px solid var(--teal);text-decoration:none;transition:all .3s;}
+.nav-cta{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;padding:.5rem 1.2rem;background:transparent;color:var(--teal);border:1px solid var(--teal);text-decoration:none;transition:all .3s;}
 .nav-cta:hover{background:var(--teal);color:var(--bg);}
-
-/* HERO */
 #home{min-height:100vh;display:flex;align-items:center;padding:68px 5vw 0;position:relative;overflow:hidden;}
 .hero-bg-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:80px 80px;opacity:.2;mask-image:radial-gradient(ellipse 70% 70% at 70% 50%,black,transparent);}
 .hero-orb{position:absolute;right:-10vw;top:50%;transform:translateY(-50%);width:55vw;height:55vw;border-radius:50%;background:radial-gradient(circle,rgba(0,200,170,.06) 0%,transparent 70%);pointer-events:none;}
 .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;width:100%;max-width:1200px;margin:0 auto;}
-.hero-badge{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.65rem;letter-spacing:.2em;color:var(--teal);text-transform:uppercase;padding:.4rem 1rem;border:1px solid rgba(0,200,170,.25);background:var(--teal-dim);margin-bottom:1.8rem;opacity:0;animation:fadeUp .8s .1s forwards;}
+.hero-badge{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.65rem;letter-spacing:.2em;color:var(--teal);text-transform:uppercase;padding:.4rem 1rem;border:1px solid rgba(0,200,170,.25);background:var(--teal-dim);margin-bottom:1.8rem;opacity:1;}
 .hero-badge::before{content:'';width:6px;height:6px;background:var(--teal);border-radius:50%;animation:blink 1.5s ease-in-out infinite;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:.2;}}
-h1.hero-name{font-family:var(--display);font-size:clamp(2.8rem,5vw,4.4rem);font-weight:700;line-height:1.08;margin-bottom:.6rem;opacity:0;animation:fadeUp .9s .3s forwards;}
+h1.hero-name{font-family:var(--display);font-size:clamp(2.8rem,5vw,4.4rem);font-weight:700;line-height:1.08;margin-bottom:.6rem;opacity:1;}
 h1.hero-name .first{display:block;color:var(--text);}
 h1.hero-name .last{display:block;color:var(--teal);}
-.hero-role{font-family:var(--display);font-style:italic;font-size:1.1rem;color:var(--gold);margin-bottom:1.8rem;opacity:0;animation:fadeUp .9s .5s forwards;}
-.hero-bio{font-size:.93rem;color:var(--light);line-height:1.85;margin-bottom:2.2rem;opacity:0;animation:fadeUp .9s .65s forwards;}
-.hero-focus-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.4rem;opacity:0;animation:fadeUp .9s .75s forwards;}
+.hero-role{font-family:var(--display);font-style:italic;font-size:1.1rem;color:var(--gold);margin-bottom:1.8rem;opacity:1;}
+.hero-bio{font-size:.93rem;color:var(--light);line-height:1.85;margin-bottom:2.2rem;opacity:1;}
+.hero-focus-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.4rem;opacity:1;}
 .chip{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .9rem;border:1px solid var(--border);color:var(--light);background:var(--surface);}
 .chip.active{border-color:rgba(0,200,170,.4);color:var(--teal);background:var(--teal-dim);}
-.hero-btns{display:flex;gap:1rem;opacity:0;animation:fadeUp .9s .85s forwards;}
-.btn{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:.85rem 2rem;text-decoration:none;border:none;cursor:pointer;transition:all .3s;}
+.hero-btns{display:flex;gap:1rem;opacity:1;}
+.btn{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:.85rem 2rem;text-decoration:none;border:none;cursor:pointer;transition:all .3s;display:inline-block;}
 .btn-primary{background:var(--teal);color:var(--bg);font-weight:500;}
 .btn-primary:hover{background:#00e8c4;box-shadow:0 0 30px var(--teal-glow);}
 .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border);}
 .btn-ghost:hover{border-color:var(--teal);color:var(--teal);}
-
-/* PHOTO FRAME */
-.hero-photo-wrap{display:flex;flex-direction:column;align-items:center;gap:2rem;opacity:0;animation:fadeUp 1s .5s forwards;}
+.hero-photo-wrap{display:flex;flex-direction:column;align-items:center;gap:2rem;opacity:1;}
 .photo-frame{position:relative;width:320px;height:380px;}
 .photo-border{position:absolute;inset:0;border:1px solid rgba(0,200,170,.3);}
 .photo-border::before{content:'';position:absolute;top:-8px;left:-8px;right:-8px;bottom:-8px;border:1px solid var(--border);}
@@ -65,48 +53,55 @@ h1.hero-name .last{display:block;color:var(--teal);}
 .photo-tag{display:flex;flex-direction:column;gap:.3rem;text-align:center;}
 .photo-tag .pt-name{font-family:var(--display);font-size:1rem;font-weight:600;}
 .photo-tag .pt-sub{font-family:var(--mono);font-size:.62rem;color:var(--teal);letter-spacing:.15em;}
-
-/* SECTION BASE */
 section{padding:6.5rem 5vw;position:relative;}
 .container{max-width:1200px;margin:0 auto;}
 .sec-label{font-family:var(--mono);font-size:.65rem;color:var(--teal);letter-spacing:.3em;text-transform:uppercase;margin-bottom:.8rem;}
 .sec-num{font-family:var(--display);font-size:.85rem;font-style:italic;color:var(--gold);margin-bottom:.4rem;}
 h2.sec-title{font-family:var(--display);font-size:clamp(2rem,3.5vw,3rem);font-weight:600;line-height:1.15;margin-bottom:3.5rem;}
-.rule{width:50px;height:1px;background:var(--teal);margin:1.2rem 0 3rem;}
 .alt-bg{background:var(--bg2);}
 .s-divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);}
-
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease;}
+.reveal{opacity:1;transform:translateY(0);transition:opacity .75s ease,transform .75s ease;}
 .reveal.on{opacity:1;transform:translateY(0);}
-
-/* ABOUT */
 .about-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:5rem;align-items:start;}
 .about-card{background:var(--surface);border:1px solid var(--border);padding:2rem;margin-bottom:1.5rem;}
 .about-card h4{font-family:var(--mono);font-size:.68rem;color:var(--teal);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1rem;}
 .about-stat{display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;border-bottom:1px solid var(--border);font-size:.87rem;}
 .about-stat:last-child{border:none;}
-.about-stat span{color:var(--muted);}
-.about-stat strong{color:var(--text);font-weight:500;}
+.about-stat span{color:var(--muted);font-size:.82rem;}
+.about-stat strong{color:var(--text);font-weight:500;font-size:.82rem;text-align:right;max-width:60%;}
 .about-body p{font-size:.95rem;color:var(--light);line-height:1.9;margin-bottom:1.4rem;}
 .about-body p strong{color:var(--teal);font-weight:500;}
 .values-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem;}
 .value-item{padding:1.2rem;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--teal);}
 .value-item h5{font-family:var(--mono);font-size:.68rem;color:var(--teal);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.4rem;}
 .value-item p{font-size:.82rem;color:var(--muted);line-height:1.65;}
-
-/* PROJECTS */
+.exp-list{display:flex;flex-direction:column;gap:2rem;}
+.exp-card{background:var(--surface);border:1px solid var(--border);padding:2rem;position:relative;overflow:hidden;transition:border-color .3s;}
+.exp-card:hover{border-color:rgba(0,200,170,.3);}
+.exp-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--teal);}
+.exp-card.gold-left::before{background:var(--gold);}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;flex-wrap:wrap;gap:.5rem;}
+.exp-org{font-family:var(--mono);font-size:.68rem;color:var(--teal);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.3rem;}
+.exp-card.gold-left .exp-org{color:var(--gold);}
+.exp-title{font-family:var(--display);font-size:1.2rem;font-weight:600;margin-bottom:.2rem;}
+.exp-dates{font-family:var(--mono);font-size:.65rem;color:var(--muted);letter-spacing:.1em;white-space:nowrap;padding:.3rem .8rem;border:1px solid var(--border);background:var(--bg);}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-top:1rem;}
+.exp-bullets li{font-size:.87rem;color:var(--light);line-height:1.7;display:flex;gap:.7rem;align-items:flex-start;}
+.exp-bullets li::before{content:'▸';color:var(--teal);flex-shrink:0;margin-top:2px;}
+.exp-card.gold-left .exp-bullets li::before{color:var(--gold);}
 .projects-list{display:flex;flex-direction:column;gap:2.5rem;}
 .project-card{background:var(--surface);border:1px solid var(--border);overflow:hidden;transition:border-color .3s,transform .3s;}
 .project-card:hover{border-color:rgba(0,200,170,.4);transform:translateY(-3px);}
 .project-top{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1.5rem;padding:1.8rem 2rem;border-bottom:1px solid var(--border);}
 .proj-num{font-family:var(--display);font-size:2.5rem;font-weight:700;color:var(--border);line-height:1;}
-.proj-info h3{font-family:var(--display);font-size:1.4rem;font-weight:600;margin-bottom:.3rem;}
+.proj-info h3{font-family:var(--display);font-size:1.3rem;font-weight:600;margin-bottom:.3rem;}
 .proj-info p{font-family:var(--mono);font-size:.65rem;color:var(--teal);letter-spacing:.15em;text-transform:uppercase;}
 .proj-status{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .8rem;border:1px solid;white-space:nowrap;}
 .proj-status.complete{color:var(--teal);border-color:rgba(0,200,170,.3);background:var(--teal-dim);}
 .proj-status.academic{color:var(--gold);border-color:rgba(201,168,76,.3);background:var(--gold-dim);}
-.project-body{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:0;}
+.proj-status.professional{color:#64b4ff;border-color:rgba(100,180,255,.3);background:rgba(100,180,255,.08);}
+.project-body{display:grid;grid-template-columns:1.4fr 1fr 1fr;}
 .proj-section{padding:1.6rem 2rem;border-right:1px solid var(--border);}
 .proj-section:last-child{border:none;}
 .proj-section h4{font-family:var(--mono);font-size:.63rem;color:var(--muted);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1rem;}
@@ -114,21 +109,19 @@ h2.sec-title{font-family:var(--display);font-size:clamp(2rem,3.5vw,3rem);font-we
 .proj-tags{display:flex;flex-wrap:wrap;gap:.4rem;}
 .proj-tag{font-family:var(--mono);font-size:.6rem;color:var(--teal);background:var(--teal-dim);border:1px solid rgba(0,200,170,.2);padding:.25rem .6rem;}
 .proj-tag.gold{color:var(--gold);background:var(--gold-dim);border-color:rgba(201,168,76,.2);}
+.proj-tag.blue{color:#64b4ff;background:rgba(100,180,255,.08);border-color:rgba(100,180,255,.2);}
 .proj-results{list-style:none;display:flex;flex-direction:column;gap:.5rem;}
 .proj-results li{font-size:.84rem;color:var(--light);display:flex;gap:.6rem;align-items:flex-start;}
 .proj-results li::before{content:'▸';color:var(--teal);flex-shrink:0;margin-top:1px;}
-
-/* VISUAL PROOF */
 .proof-section{margin-top:4rem;}
 .proof-section h3{font-family:var(--display);font-size:1.5rem;margin-bottom:.6rem;}
 .proof-section .sub{font-size:.87rem;color:var(--muted);margin-bottom:2rem;}
 .proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
-.risk-matrix{background:var(--surface);border:1px solid var(--border);padding:1.8rem;}
-.risk-matrix h4{font-family:var(--mono);font-size:.68rem;color:var(--teal);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.5rem;}
-.matrix-grid{display:grid;grid-template-columns:auto repeat(5,1fr);grid-template-rows:auto repeat(5,1fr);gap:3px;font-family:var(--mono);font-size:.58rem;}
+.risk-matrix,.nist-table{background:var(--surface);border:1px solid var(--border);padding:1.8rem;}
+.risk-matrix h4,.nist-table h4{font-family:var(--mono);font-size:.68rem;color:var(--teal);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.5rem;}
+.matrix-grid{display:grid;grid-template-columns:auto repeat(5,1fr);gap:3px;font-family:var(--mono);font-size:.58rem;}
 .mx-axis-label{display:flex;align-items:center;justify-content:center;padding:.3rem;color:var(--muted);font-size:.6rem;}
 .mx-cell{display:flex;align-items:center;justify-content:center;padding:.5rem .3rem;text-align:center;font-size:.62rem;font-weight:500;border-radius:2px;}
-.mx-label{background:var(--border);color:var(--muted);font-size:.6rem;}
 .mx-low{background:rgba(52,199,89,.2);color:#34c759;}
 .mx-med{background:rgba(255,159,10,.2);color:#ff9f0a;}
 .mx-high{background:rgba(255,69,58,.2);color:#ff453a;}
@@ -136,8 +129,6 @@ h2.sec-title{font-family:var(--display);font-size:clamp(2rem,3.5vw,3rem);font-we
 .matrix-legend{display:flex;gap:1rem;margin-top:1rem;flex-wrap:wrap;}
 .legend-item{display:flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.6rem;color:var(--muted);}
 .legend-dot{width:8px;height:8px;border-radius:1px;}
-.nist-table{background:var(--surface);border:1px solid var(--border);padding:1.8rem;}
-.nist-table h4{font-family:var(--mono);font-size:.68rem;color:var(--teal);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.5rem;}
 table{width:100%;border-collapse:collapse;font-size:.8rem;}
 th{font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;color:var(--teal);text-transform:uppercase;padding:.7rem .8rem;border-bottom:2px solid var(--border);text-align:left;}
 td{padding:.7rem .8rem;border-bottom:1px solid var(--border);color:var(--light);vertical-align:middle;}
@@ -151,11 +142,7 @@ tr:hover td{background:rgba(0,200,170,.04);}
 .fn-rc{background:rgba(52,199,89,.12);color:#34c759;}
 .status-dot{display:inline-flex;align-items:center;gap:.4rem;font-size:.75rem;}
 .dot{width:7px;height:7px;border-radius:50%;display:inline-block;}
-.dot.impl{background:#34c759;}
-.dot.prog{background:#ff9f0a;}
-.dot.plan{background:#64b4ff;}
-
-/* SKILLS */
+.dot.impl{background:#34c759;}.dot.prog{background:#ff9f0a;}.dot.plan{background:#64b4ff;}
 .skills-container{display:grid;grid-template-columns:1fr 1fr;gap:3rem;}
 .skills-group h3{font-family:var(--display);font-size:1.3rem;font-weight:600;margin-bottom:1.8rem;padding-bottom:.8rem;border-bottom:1px solid var(--border);}
 .skill-row{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.4rem;}
@@ -168,32 +155,26 @@ tr:hover td{background:rgba(0,200,170,.04);}
 .t-chip{font-family:var(--mono);font-size:.65rem;letter-spacing:.08em;padding:.4rem .9rem;border:1px solid var(--border);color:var(--light);background:var(--surface);transition:all .25s;}
 .t-chip:hover{border-color:var(--teal);color:var(--teal);background:var(--teal-dim);}
 .t-chip.gold{border-color:rgba(201,168,76,.25);color:var(--gold);background:var(--gold-dim);}
-
-/* CERTIFICATIONS */
 .edu-certs{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
-.edu-block{background:var(--surface);border:1px solid var(--border);padding:2rem;position:relative;overflow:hidden;}
+.edu-block{background:var(--surface);border:1px solid var(--border);padding:2rem;position:relative;overflow:hidden;margin-bottom:1.5rem;}
 .edu-block::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--teal),transparent);}
+.edu-block.gold-top::before{background:linear-gradient(90deg,var(--gold),transparent);}
 .edu-block .inst{font-family:var(--mono);font-size:.65rem;color:var(--teal);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.6rem;}
-.edu-block h3{font-family:var(--display);font-size:1.25rem;font-weight:600;margin-bottom:.4rem;}
-.edu-block .deg{font-size:.85rem;color:var(--muted);margin-bottom:1.2rem;}
-.coursework h5{font-family:var(--mono);font-size:.62rem;color:var(--muted);letter-spacing:.18em;text-transform:uppercase;margin-bottom:.7rem;}
-.cw-list{display:flex;flex-direction:column;gap:.4rem;}
-.cw-item{font-size:.84rem;color:var(--light);display:flex;gap:.6rem;align-items:center;}
-.cw-item::before{content:'◆';color:var(--teal);font-size:.45rem;flex-shrink:0;}
+.edu-block.gold-top .inst{color:var(--gold);}
+.edu-block h3{font-family:var(--display);font-size:1.15rem;font-weight:600;margin-bottom:.4rem;}
+.edu-block .deg{font-size:.85rem;color:var(--muted);margin-bottom:1rem;}
+.cw-list{display:flex;flex-direction:column;gap:.4rem;margin-top:.8rem;}
+.cw-item{font-size:.84rem;color:var(--light);display:flex;gap:.6rem;align-items:flex-start;line-height:1.5;}
+.cw-item::before{content:'◆';color:var(--teal);font-size:.45rem;flex-shrink:0;margin-top:4px;}
 .cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;}
 .cert-badge{padding:1rem;border:1px solid var(--border);background:var(--bg);text-align:center;transition:border-color .3s;}
 .cert-badge:hover{border-color:rgba(0,200,170,.4);}
 .cert-badge .cert-icon{font-size:1.4rem;margin-bottom:.4rem;}
 .cert-badge .cert-name{font-family:var(--mono);font-size:.62rem;color:var(--teal);letter-spacing:.1em;text-transform:uppercase;line-height:1.4;}
 .cert-badge .cert-status{font-family:var(--mono);font-size:.58rem;color:var(--muted);margin-top:.3rem;}
-.cert-badge.earned{border-color:rgba(201,168,76,.2);background:var(--gold-dim);}
-.cert-badge.earned .cert-name{color:var(--gold);}
-
-/* RESUME */
 .resume-wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:4rem;align-items:start;}
 .resume-preview{background:var(--surface);border:1px solid var(--border);padding:2.5rem;position:relative;}
-.resume-preview::before{content:'CURRICULUM VITAE';position:absolute;top:1.5rem;right:1.5rem;font-family:var(--mono);font-size:.55rem;color:var(--border);letter-spacing:.25em;}
-.rv-name{font-family:var(--display);font-size:1.8rem;font-weight:700;color:var(--text);margin-bottom:.2rem;}
+.rv-name{font-family:var(--display);font-size:1.8rem;font-weight:700;margin-bottom:.2rem;}
 .rv-title{font-family:var(--mono);font-size:.68rem;color:var(--teal);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
 .rv-section{margin-bottom:1.5rem;}
 .rv-section h4{font-family:var(--mono);font-size:.62rem;color:var(--muted);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.8rem;padding-bottom:.4rem;border-bottom:1px solid var(--border);}
@@ -206,10 +187,8 @@ tr:hover td{background:rgba(0,200,170,.04);}
 .action-card:hover{border-color:rgba(0,200,170,.3);}
 .action-card h4{font-family:var(--display);font-size:1.1rem;margin-bottom:.5rem;}
 .action-card p{font-size:.84rem;color:var(--muted);line-height:1.6;margin-bottom:1.2rem;}
-.download-btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;padding:.7rem 1.4rem;background:var(--teal-dim);color:var(--teal);border:1px solid rgba(0,200,170,.3);text-decoration:none;transition:all .3s;cursor:pointer;}
+.download-btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;padding:.7rem 1.4rem;background:var(--teal-dim);color:var(--teal);border:1px solid rgba(0,200,170,.3);text-decoration:none;transition:all .3s;}
 .download-btn:hover{background:var(--teal);color:var(--bg);}
-
-/* DOCUMENTS HUB */
 .docs-intro{font-size:.92rem;color:var(--muted);line-height:1.8;margin-bottom:3rem;max-width:700px;}
 .docs-intro strong{color:var(--teal);}
 .docs-categories{display:flex;flex-direction:column;gap:3rem;}
@@ -225,7 +204,8 @@ tr:hover td{background:rgba(0,200,170,.04);}
 .doc-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;}
 .doc-icon{font-size:1.8rem;}
 .doc-badge{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .6rem;border:1px solid;border-radius:2px;}
-.doc-badge.pending{color:var(--muted);border-color:var(--border);background:transparent;}
+.doc-badge.live{color:#34c759;border-color:rgba(52,199,89,.3);background:rgba(52,199,89,.08);}
+.doc-badge.pending{color:var(--muted);border-color:var(--border);}
 .doc-badge.optional{color:var(--gold);border-color:rgba(201,168,76,.3);background:var(--gold-dim);}
 .doc-badge.future{color:#64b4ff;border-color:rgba(100,180,255,.3);background:rgba(100,180,255,.08);}
 .doc-title{font-size:.95rem;font-weight:600;color:var(--text);margin-bottom:.4rem;}
@@ -244,8 +224,6 @@ tr:hover td{background:rgba(0,200,170,.04);}
 .how-to-step{display:flex;gap:.9rem;align-items:flex-start;font-size:.86rem;color:var(--light);line-height:1.7;counter-increment:steps;}
 .how-to-step::before{content:counter(steps);font-family:var(--mono);font-size:.65rem;color:var(--teal);background:var(--teal-dim);border:1px solid rgba(0,200,170,.2);min-width:24px;height:24px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
 .how-to-step code{font-family:var(--mono);font-size:.78rem;background:rgba(0,200,170,.08);color:var(--teal);padding:.1rem .4rem;border:1px solid rgba(0,200,170,.15);}
-
-/* PDF MODAL */
 .pdf-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:1000;backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:2rem;}
 .pdf-modal.open{display:flex;}
 .pdf-modal-inner{background:var(--surface);border:1px solid var(--border);width:100%;max-width:900px;max-height:90vh;display:flex;flex-direction:column;overflow:hidden;}
@@ -255,8 +233,6 @@ tr:hover td{background:rgba(0,200,170,.04);}
 .pdf-modal-close:hover{color:var(--text);border-color:var(--muted);}
 .pdf-modal-body{flex:1;overflow:auto;padding:1.5rem;display:flex;flex-direction:column;gap:1rem;}
 .pdf-embed{width:100%;height:580px;border:none;background:#0a0e15;}
-
-/* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:start;}
 .contact-form{display:flex;flex-direction:column;gap:1.2rem;}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
@@ -274,15 +250,12 @@ tr:hover td{background:rgba(0,200,170,.04);}
 .ci-label{font-family:var(--mono);font-size:.6rem;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.2rem;}
 .ci-value{font-size:.88rem;color:var(--text);}
 .ci-value a{color:var(--teal);text-decoration:none;}
-
-/* FOOTER */
+.ci-value a:hover{text-decoration:underline;}
 footer{padding:2.5rem 5vw;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
 .footer-left .fn{font-family:var(--display);font-size:1rem;font-weight:600;}
 .footer-left .ft{font-family:var(--mono);font-size:.6rem;color:var(--muted);letter-spacing:.15em;margin-top:.2rem;}
 .footer-right{font-family:var(--mono);font-size:.62rem;color:var(--muted);letter-spacing:.12em;}
 .footer-right span{color:var(--teal);}
-
-/* RESPONSIVE */
 @media(max-width:1000px){
   .hero-inner{grid-template-columns:1fr;gap:3rem;}
   .hero-photo-wrap{display:none;}
@@ -299,7 +272,6 @@ footer{padding:2.5rem 5vw;border-top:1px solid var(--border);display:flex;justif
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-brand">
     <div class="nav-name">Mercy Oji</div>
@@ -308,9 +280,10 @@ footer{padding:2.5rem 5vw;border-top:1px solid var(--border);display:flex;justif
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
-    <li><a href="#certifications">Education</a></li>
+    <li><a href="#education">Education</a></li>
     <li><a href="#resume">Résumé</a></li>
     <li><a href="#documents">Documents</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -324,21 +297,21 @@ footer{padding:2.5rem 5vw;border-top:1px solid var(--border);display:flex;justif
   <div class="hero-orb"></div>
   <div class="hero-inner container">
     <div class="hero-text">
-      <div class="hero-badge">Graduate Researcher · University of Dallas</div>
+      <div class="hero-badge">MS Cyber Intelligence · University of Dallas</div>
       <h1 class="hero-name"><span class="first">Mercy</span><span class="last">Oji</span></h1>
       <p class="hero-role">Cybersecurity Risk &amp; Governance Professional</p>
-      <p class="hero-bio">A highly motivated graduate student pursuing an <strong style="color:var(--text);font-weight:500;">MS in Cybersecurity Intelligence</strong> at the University of Dallas, with focused expertise in governance, risk management, and compliance (GRC). I translate complex cybersecurity challenges into practical, business-aligned solutions.</p>
+      <p class="hero-bio">A seasoned risk and governance professional with over <strong style="color:var(--text);font-weight:500;">10 years of experience</strong> in central banking, commercial banking, and IT security. Pursuing an MS in Cyber Intelligence at the University of Dallas, combining deep regulatory expertise with hands-on cybersecurity skills in GRC, threat analysis, and incident response.</p>
       <div class="hero-focus-chips">
-        <span class="chip active">Governance</span>
-        <span class="chip active">Risk &amp; Compliance</span>
-        <span class="chip active">Threat Analysis</span>
-        <span class="chip">NIST RMF</span>
-        <span class="chip">ISO 27001</span>
-        <span class="chip">Zero Trust</span>
+        <span class="chip active">Governance · Risk · Compliance</span>
+        <span class="chip active">ISO 27001 · NIST · PCI DSS</span>
+        <span class="chip active">Incident Response</span>
+        <span class="chip">KYC / AML</span>
+        <span class="chip">Incident Response</span>
+        <span class="chip">GDPR</span>
       </div>
       <div class="hero-btns">
-        <a href="#projects" class="btn btn-primary">View My Work</a>
-        <a href="#resume" class="btn btn-ghost">Download Résumé</a>
+        <a href="#experience" class="btn btn-primary">View My Experience</a>
+        <a href="#documents" class="btn btn-ghost">My Documents</a>
       </div>
     </div>
     <div class="hero-photo-wrap">
@@ -351,7 +324,7 @@ footer{padding:2.5rem 5vw;border-top:1px solid var(--border);display:flex;justif
       </div>
       <div class="photo-tag">
         <div class="pt-name">Mercy Oji</div>
-        <div class="pt-sub">MS Cybersecurity Intelligence · UD</div>
+        <div class="pt-sub">MS Cyber Intelligence · University of Dallas</div>
       </div>
     </div>
   </div>
@@ -362,34 +335,33 @@ footer{padding:2.5rem 5vw;border-top:1px solid var(--border);display:flex;justif
 <!-- ABOUT -->
 <section id="about" class="alt-bg">
   <div class="container">
-    <div class="reveal"><p class="sec-num">// 01</p><p class="sec-label">About Me</p><h2 class="sec-title">Bridging Strategy<br>&amp; <em>Security</em></h2></div>
+    <div class="reveal"><p class="sec-num">// 01</p><p class="sec-label">About Me</p><h2 class="sec-title">A Decade of Risk,<br><em>Governance &amp; Security</em></h2></div>
     <div class="about-grid">
       <div class="about-sidebar reveal">
         <div class="about-card">
-          <h4>Academic Profile</h4>
-          <div class="about-stat"><span>Degree</span><strong>MS Cybersecurity Intelligence</strong></div>
+          <h4>Current Status</h4>
+          <div class="about-stat"><span>Degree</span><strong>MS Cyber Intelligence</strong></div>
           <div class="about-stat"><span>Institution</span><strong>University of Dallas</strong></div>
-          <div class="about-stat"><span>Focus</span><strong>GRC &amp; Cyber Intelligence</strong></div>
-          <div class="about-stat"><span>Status</span><strong>Graduate Student</strong></div>
+          <div class="about-stat"><span>Expected</span><strong>May 2026</strong></div>
+          <div class="about-stat"><span>Location</span><strong>Irving, Texas</strong></div>
         </div>
         <div class="about-card">
-          <h4>Career Focus Areas</h4>
-          <div class="about-stat"><span>Primary</span><strong>Risk Governance</strong></div>
-          <div class="about-stat"><span>Secondary</span><strong>Threat Analysis</strong></div>
-          <div class="about-stat"><span>Tertiary</span><strong>Security Strategy</strong></div>
-          <div class="about-stat"><span>Target Role</span><strong>GRC Analyst</strong></div>
+          <h4>Career Highlights</h4>
+          <div class="about-stat"><span>Experience</span><strong>10+ Years</strong></div>
+          <div class="about-stat"><span>Central Bank</span><strong>6 Years · CBN</strong></div>
+          <div class="about-stat"><span>Banking</span><strong>4.5 Years · Heritage Bank</strong></div>
+          <div class="about-stat"><span>Current</span><strong>IT Support · UD</strong></div>
         </div>
       </div>
       <div class="about-body reveal">
-        <p>I am a <strong>highly motivated cybersecurity professional</strong> with a graduate-level focus on governance, risk management, and compliance (GRC). My academic foundation at the University of Dallas has equipped me with both theoretical depth and practical skills to address real-world cybersecurity challenges.</p>
-        <p>My work sits at the intersection of <strong>technical rigor and strategic thinking</strong> — I specialize in threat analysis, comprehensive risk assessments, and aligning organizational security postures with regulatory frameworks including <strong>NIST</strong> and <strong>ISO 27001</strong>.</p>
-        <p>Through hands-on academic projects and IT support experience, I have developed a strong ability to <strong>translate complex cybersecurity concepts into business-aligned solutions</strong> that protect critical systems and drive organizational resilience.</p>
-        <p>I am passionate about <strong>critical infrastructure protection</strong>, building security cultures, and contributing to a safer digital world.</p>
+        <p>I am a highly motivated cybersecurity and risk governance professional with over a decade of experience spanning <strong>central banking, commercial banking, and academic IT security</strong>. My career has been defined by protecting critical systems, ensuring regulatory compliance, and driving security culture across complex organizations.</p>
+        <p>At the <strong>Central Bank of Nigeria</strong>, I served as Deputy Manager for Security Risk Management, leading ISO 27001, NIST, and PCI compliance across critical financial environments — developing System Security Plans, incident response procedures, and change control processes that significantly strengthened institutional security.</p>
+        <p>Now at the <strong>University of Dallas</strong>, I combine hands-on IT support with graduate-level academic training. My coursework — including the Strategic Cybersecurity Practicum — has produced real-world GRC deliverables including a full cybersecurity policy suite and a strategic risk management report, both aligned with PCI DSS and GDPR.</p>
         <div class="values-grid">
-          <div class="value-item"><h5>Integrity</h5><p>Upholding ethical standards in every security decision and stakeholder interaction.</p></div>
-          <div class="value-item"><h5>Precision</h5><p>Thorough, evidence-based analysis that leaves no vulnerability unexamined.</p></div>
-          <div class="value-item"><h5>Collaboration</h5><p>Building cross-functional alignment between security teams and business leaders.</p></div>
-          <div class="value-item"><h5>Continuous Growth</h5><p>Staying ahead of the evolving threat landscape through ongoing learning.</p></div>
+          <div class="value-item"><h5>Integrity</h5><p>Upholding ethical standards in every security decision and compliance action.</p></div>
+          <div class="value-item"><h5>Precision</h5><p>Evidence-based risk analysis with documented findings and actionable recommendations.</p></div>
+          <div class="value-item"><h5>Leadership</h5><p>Cross-functional team leadership with a proven record of driving compliance culture.</p></div>
+          <div class="value-item"><h5>Adaptability</h5><p>Thriving in fast-paced, highly regulated environments across multiple industries.</p></div>
         </div>
       </div>
     </div>
@@ -398,86 +370,227 @@ footer{padding:2.5rem 5vw;border-top:1px solid var(--border);display:flex;justif
 
 <div class="s-divider"></div>
 
-<!-- PROJECTS -->
-<section id="projects">
+<!-- EXPERIENCE -->
+<section id="experience">
   <div class="container">
-    <div class="reveal"><p class="sec-num">// 02</p><p class="sec-label">Projects</p><h2 class="sec-title">Featured Work &amp;<br><em>Academic Projects</em></h2></div>
+    <div class="reveal"><p class="sec-num">// 02</p><p class="sec-label">Work History</p><h2 class="sec-title">Professional<br><em>Experience</em></h2></div>
+    <div class="exp-list">
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <div>
+            <div class="exp-org">University of Dallas · Irving, TX</div>
+            <div class="exp-title">IT Support</div>
+          </div>
+          <div class="exp-dates">August 2024 – Present</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Investigated apparent, suspected, or actual security incidents, including intrusion attempts and system compromises, ensuring correct notification, containment, eradication, recovery, and follow-up procedures were followed. Monitored security incidents and detections.</li>
+          <li>Repaired damage resulting from incidents; analyzed and reported findings, lessons learned, and recommendations to management.</li>
+          <li>Managed and prioritized trouble tickets, ensuring timely resolution while adhering to organizational policies and IT security protocols.</li>
+          <li>Assisted in routine system maintenance, security updates, and software installations to enhance system performance and mitigate potential vulnerabilities.</li>
+          <li>Collaborated with IT staff to identify and troubleshoot network issues, contributing to optimization of the university's IT infrastructure.</li>
+        </ul>
+      </div>
+      <div class="exp-card gold-left reveal">
+        <div class="exp-header">
+          <div>
+            <div class="exp-org">Central Bank of Nigeria</div>
+            <div class="exp-title">Deputy Manager – Security Risk Management &amp; Compliance, Currency Operations</div>
+          </div>
+          <div class="exp-dates">May 2018 – June 2024</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Spearheaded the proposal and implementation of secure upgrades to currency processing systems, incorporating secure change management processes for software updates and security patching.</li>
+          <li>Performed risk assessments across multiple environments; developed and maintained System Security Plans (SSPs), incident response plans, change control procedures, and Plans of Action and Milestones (POAMs).</li>
+          <li>Provided continuous gap analysis of current policies against established guidelines outlined by <strong style="color:var(--gold);">ISO 27001, NIST, and PCI DSS</strong>.</li>
+          <li>Monitored vendor and service provider performance against SLAs to ensure compliance, timely delivery, and alignment with organizational security protocols.</li>
+          <li>Maintained and presented detailed progress reports to senior leadership, highlighting performance metrics, security compliance, and improvement strategies.</li>
+          <li>Acted as the primary liaison for project administrators and managers, ensuring successful project lifecycles including planning, execution, and risk mitigation.</li>
+        </ul>
+      </div>
+      <div class="exp-card gold-left reveal">
+        <div class="exp-header">
+          <div>
+            <div class="exp-org">Heritage Bank PLC</div>
+            <div class="exp-title">Service/Risk Manager</div>
+          </div>
+          <div class="exp-dates">October 2013 – April 2018</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Managed the bank's exposure to internal and external risks including regulatory procedures, physical security of staff and assets, and effective cash management.</li>
+          <li>Conducted risk assessments to identify potential threats, mitigate vulnerabilities, and safeguard sensitive financial operations.</li>
+          <li>Supervised a team of <strong style="color:var(--gold);">15 banking operations staff</strong>, driving continuous service delivery improvement through performance monitoring and skill development programs.</li>
+          <li>Reduced service failures by <strong style="color:var(--gold);">50%</strong> by responding promptly to customer inquiries and escalating complex issues for quick resolution.</li>
+          <li>Improved operational efficiency by introducing a streamlined document filing system, <strong style="color:var(--gold);">reducing transaction turnaround times by 40%</strong>.</li>
+          <li>Ensured compliance with <strong style="color:var(--gold);">KYC and AML regulations</strong>, safeguarding customer data and mitigating financial crime risks.</li>
+          <li>Analyzed and implemented standard operating procedures (SOPs) for account opening processes, ensuring regulatory compliance and minimizing errors.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="s-divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects" class="alt-bg">
+  <div class="container">
+    <div class="reveal"><p class="sec-num">// 03</p><p class="sec-label">Projects</p><h2 class="sec-title">Featured Work &amp;<br><em>Academic Projects</em></h2></div>
     <div class="projects-list">
+
       <div class="project-card reveal">
         <div class="project-top">
           <div class="proj-num">01</div>
-          <div class="proj-info"><h3>Strategic Cybersecurity Risk Assessment</h3><p>Governance, Risk &amp; Compliance · Academic Project</p></div>
-          <span class="proj-status academic">Academic</span>
+          <div class="proj-info">
+            <h3>Cybersecurity Policy Suite – Wandr Travel Group</h3>
+            <p>CYBS 8396: Strategic Cybersecurity Practicum · University of Dallas</p>
+          </div>
+          <span class="proj-status academic">Academic · Feb 2026</span>
         </div>
         <div class="project-body">
-          <div class="proj-section"><h4>Objective &amp; Description</h4><p>Developed a comprehensive enterprise cybersecurity risk assessment aligned with NIST RMF and ISO 27001. Involved identifying critical organizational assets, conducting vulnerability analysis, and designing a layered risk mitigation strategy for a simulated financial services organization.</p></div>
-          <div class="proj-section"><h4>Tools &amp; Frameworks</h4><div class="proj-tags"><span class="proj-tag">NIST RMF</span><span class="proj-tag">ISO 27001</span><span class="proj-tag gold">Risk Matrix</span><span class="proj-tag gold">Asset Inventory</span><span class="proj-tag">Threat Modeling</span><span class="proj-tag">MITRE ATT&CK</span></div></div>
-          <div class="proj-section"><h4>Key Results</h4><ul class="proj-results"><li>Identified 23 critical organizational assets with risk classifications</li><li>Conducted vulnerability gap analysis across 5 security domains</li><li>Designed 18 risk mitigation controls mapped to NIST CSF functions</li><li>Produced executive-ready risk report with business impact scoring</li></ul></div>
+          <div class="proj-section">
+            <h4>Objective &amp; Description</h4>
+            <p>As the simulated CISO of Wandr Travel Group (WTG), a fictional travel technology company processing payments and personal data globally, designed and documented a comprehensive cybersecurity policy suite aligned with PCI DSS and GDPR. Produced four enforceable Issue-Specific and System-Specific Security Policies addressing the most critical attack vectors, plus a breach-reduction action plan.</p>
+          </div>
+          <div class="proj-section">
+            <h4>Frameworks &amp; Tools</h4>
+            <div class="proj-tags">
+              <span class="proj-tag">PCI DSS v4.0</span>
+              <span class="proj-tag">GDPR</span>
+              <span class="proj-tag gold">Access Control Policy</span>
+              <span class="proj-tag gold">Data Protection Policy</span>
+              <span class="proj-tag">Secure Remote Access</span>
+              <span class="proj-tag">Incident Response</span>
+              <span class="proj-tag">RBAC / MFA / Zero Trust</span>
+            </div>
+          </div>
+          <div class="proj-section">
+            <h4>Key Deliverables</h4>
+            <ul class="proj-results">
+              <li>Access Control &amp; Authentication Policy (SysSP) — RBAC, MFA, least privilege, account lifecycle</li>
+              <li>Data Protection &amp; Privacy Policy (ISSP) — encryption, data minimization, retention limits, privacy rights</li>
+              <li>Secure Remote Access Policy (ISSP) — VPN, MFA, session management, continuous monitoring</li>
+              <li>Incident Response &amp; Breach Notification Policy (ISSP) — GDPR &amp; PCI DSS notification timelines</li>
+              <li>Breach reduction plan addressing human error, policy enforcement gaps, and evolving threats</li>
+            </ul>
+          </div>
         </div>
       </div>
+
       <div class="project-card reveal">
         <div class="project-top">
           <div class="proj-num">02</div>
-          <div class="proj-info"><h3>Strategic Cybersecurity Plan</h3><p>Security Strategy &amp; Governance · Academic Project</p></div>
-          <span class="proj-status complete">Completed</span>
+          <div class="proj-info">
+            <h3>Risk Management Report – Wandr Travel Group</h3>
+            <p>CYBS 8396: Strategic Cybersecurity Practicum · University of Dallas</p>
+          </div>
+          <span class="proj-status academic">Academic · Feb 2026</span>
         </div>
         <div class="project-body">
-          <div class="proj-section"><h4>Objective &amp; Description</h4><p>Designed and delivered a multi-year strategic cybersecurity roadmap for a simulated mid-sized enterprise, addressing security program maturity, governance structures, policy development, and alignment with business objectives and regulatory requirements.</p></div>
-          <div class="proj-section"><h4>Tools &amp; Frameworks</h4><div class="proj-tags"><span class="proj-tag">NIST CSF</span><span class="proj-tag gold">Security Governance</span><span class="proj-tag">Policy Drafting</span><span class="proj-tag">Zero Trust</span><span class="proj-tag gold">Compliance Mapping</span><span class="proj-tag">RACI Matrix</span></div></div>
-          <div class="proj-section"><h4>Key Results</h4><ul class="proj-results"><li>Developed 3-year cybersecurity roadmap with milestone KPIs</li><li>Drafted 6 core security policies covering access, incident, and data</li><li>Mapped regulatory requirements across HIPAA, PCI-DSS, GDPR</li><li>Proposed Zero Trust Architecture migration framework</li></ul></div>
+          <div class="proj-section">
+            <h4>Objective &amp; Description</h4>
+            <p>Developed a full strategic cybersecurity risk management plan for WTG using NIST SP 800-30 and NIST SP 800-39 methodologies. Assessed four critical information assets — payment processing, personal data repository, AI recommendation engine, and mobile application — across a four-tier data classification scheme. Produced a formal risk register, heat map, and executive risk appetite statement.</p>
+          </div>
+          <div class="proj-section">
+            <h4>Frameworks &amp; Tools</h4>
+            <div class="proj-tags">
+              <span class="proj-tag">NIST SP 800-30</span>
+              <span class="proj-tag">NIST SP 800-39</span>
+              <span class="proj-tag gold">Risk Matrix</span>
+              <span class="proj-tag gold">Asset Classification</span>
+              <span class="proj-tag">PCI DSS</span>
+              <span class="proj-tag">GDPR</span>
+              <span class="proj-tag">OWASP</span>
+            </div>
+          </div>
+          <div class="proj-section">
+            <h4>Key Results</h4>
+            <ul class="proj-results">
+              <li>Classified 4 assets: Payment Processing &amp; Personal Data (Restricted/HIGH risk), AI Engine &amp; Mobile (Confidential/MODERATE)</li>
+              <li>Identified SQL injection (Risk Score 6) and weak authentication (Risk Score 6) as critical vulnerabilities</li>
+              <li>Recommended 5-control layered defense per asset including WAF, OAuth 2.0 MFA, CSPM, DLP, tokenization</li>
+              <li>Produced executive risk heat map, risk appetite statement, and quarterly KPI framework</li>
+              <li>Demonstrated residual risk reduction from score 6 to score 2 after full control implementation</li>
+            </ul>
+          </div>
         </div>
       </div>
+
       <div class="project-card reveal">
         <div class="project-top">
           <div class="proj-num">03</div>
-          <div class="proj-info"><h3>SQL &amp; Data Analytics for Security Insights</h3><p>Security Analytics · Academic Project</p></div>
-          <span class="proj-status academic">Academic</span>
+          <div class="proj-info">
+            <h3>CBN Currency Systems – Security Upgrade &amp; Compliance</h3>
+            <p>Security Risk Management · Professional Project · Central Bank of Nigeria</p>
+          </div>
+          <span class="proj-status professional">Professional</span>
         </div>
         <div class="project-body">
-          <div class="proj-section"><h4>Objective &amp; Description</h4><p>Applied SQL and BigQuery skills to process and derive security-relevant insights from large datasets, identifying anomalous access patterns, analyzing user behavior logs, and producing data-driven risk reports.</p></div>
-          <div class="proj-section"><h4>Tools &amp; Frameworks</h4><div class="proj-tags"><span class="proj-tag">SQL</span><span class="proj-tag">BigQuery</span><span class="proj-tag gold">Data Analytics</span><span class="proj-tag">Log Analysis</span><span class="proj-tag gold">Anomaly Detection</span></div></div>
-          <div class="proj-section"><h4>Key Results</h4><ul class="proj-results"><li>Queried and analyzed 50,000+ access log entries using SQL</li><li>Detected 12 anomalous access behavior patterns in dataset</li><li>Built automated query pipeline for weekly security reporting</li><li>Produced data-driven risk dashboard for stakeholders</li></ul></div>
+          <div class="proj-section">
+            <h4>Objective &amp; Description</h4>
+            <p>Led the proposal and implementation of secure upgrades to Central Bank of Nigeria currency processing systems. Incorporated change management processes, software security patching, and comprehensive SSP documentation aligned with ISO 27001, NIST, and PCI standards. Delivered continuous gap analysis to maintain regulatory alignment across all security domains.</p>
+          </div>
+          <div class="proj-section">
+            <h4>Frameworks &amp; Tools</h4>
+            <div class="proj-tags">
+              <span class="proj-tag blue">ISO 27001</span>
+              <span class="proj-tag blue">NIST</span>
+              <span class="proj-tag blue">PCI DSS</span>
+              <span class="proj-tag gold">SSP Documentation</span>
+              <span class="proj-tag">POAMs</span>
+              <span class="proj-tag">Change Control</span>
+              <span class="proj-tag">Incident Response Plans</span>
+            </div>
+          </div>
+          <div class="proj-section">
+            <h4>Key Results</h4>
+            <ul class="proj-results">
+              <li>Implemented secure change management for critical national currency systems</li>
+              <li>Updated SSPs and incident response plans to current regulatory standards</li>
+              <li>Continuous gap analysis ensuring alignment with ISO 27001, NIST, and PCI frameworks</li>
+              <li>Strengthened security posture of high-value national financial infrastructure</li>
+            </ul>
+          </div>
         </div>
       </div>
+
     </div>
+
     <!-- VISUAL PROOF -->
     <div class="proof-section reveal">
       <h3>Visual Evidence of Work</h3>
-      <p class="sub">Sample artifacts from academic projects — frameworks applied and risk models built.</p>
+      <p class="sub">Artifacts from the Strategic Cybersecurity Practicum — CYBS 8396, University of Dallas.</p>
       <div class="proof-grid">
         <div class="risk-matrix">
-          <h4>// Risk Matrix — Strategic Risk Assessment</h4>
+          <h4>// WTG Asset Risk Matrix (NIST SP 800-30)</h4>
           <div style="overflow-x:auto;">
-            <div class="matrix-grid" style="min-width:320px;">
+            <div class="matrix-grid" style="min-width:300px;">
               <div class="mx-axis-label"></div>
               <div class="mx-axis-label">1<br>Rare</div><div class="mx-axis-label">2<br>Unlikely</div><div class="mx-axis-label">3<br>Possible</div><div class="mx-axis-label">4<br>Likely</div><div class="mx-axis-label">5<br>Almost</div>
               <div class="mx-axis-label">5 Critical</div><div class="mx-cell mx-med">5</div><div class="mx-cell mx-high">10</div><div class="mx-cell mx-high">15</div><div class="mx-cell mx-crit">20</div><div class="mx-cell mx-crit">25</div>
-              <div class="mx-axis-label">4 Major</div><div class="mx-cell mx-low">4</div><div class="mx-cell mx-med">8</div><div class="mx-cell mx-high">12</div><div class="mx-cell mx-high">16</div><div class="mx-cell mx-crit">20</div>
-              <div class="mx-axis-label">3 Moderate</div><div class="mx-cell mx-low">3</div><div class="mx-cell mx-med">6</div><div class="mx-cell mx-med">9</div><div class="mx-cell mx-high">12</div><div class="mx-cell mx-high">15</div>
+              <div class="mx-axis-label">4 Major</div><div class="mx-cell mx-low">4</div><div class="mx-cell mx-med">8</div><div class="mx-cell mx-high" title="Assets 1 &amp; 2">12 ★</div><div class="mx-cell mx-high">16</div><div class="mx-cell mx-crit">20</div>
+              <div class="mx-axis-label">3 Moderate</div><div class="mx-cell mx-low">3</div><div class="mx-cell mx-med" title="Assets 3 &amp; 4">6 ●</div><div class="mx-cell mx-med">9</div><div class="mx-cell mx-high">12</div><div class="mx-cell mx-high">15</div>
               <div class="mx-axis-label">2 Minor</div><div class="mx-cell mx-low">2</div><div class="mx-cell mx-low">4</div><div class="mx-cell mx-med">6</div><div class="mx-cell mx-med">8</div><div class="mx-cell mx-high">10</div>
               <div class="mx-axis-label">1 Minimal</div><div class="mx-cell mx-low">1</div><div class="mx-cell mx-low">2</div><div class="mx-cell mx-low">3</div><div class="mx-cell mx-low">4</div><div class="mx-cell mx-med">5</div>
             </div>
           </div>
-          <div style="text-align:center;font-family:var(--mono);font-size:.55rem;color:var(--muted);margin-top:.6rem;">← LIKELIHOOD →</div>
-          <div class="matrix-legend">
-            <div class="legend-item"><div class="legend-dot" style="background:rgba(52,199,89,.5)"></div>Low (1–4)</div>
-            <div class="legend-item"><div class="legend-dot" style="background:rgba(255,159,10,.5)"></div>Medium (5–9)</div>
-            <div class="legend-item"><div class="legend-dot" style="background:rgba(255,69,58,.5)"></div>High (10–19)</div>
-            <div class="legend-item"><div class="legend-dot" style="background:rgba(255,69,58,.8)"></div>Critical (20–25)</div>
+          <div style="font-family:var(--mono);font-size:.58rem;color:var(--muted);margin-top:.8rem;display:flex;flex-direction:column;gap:.3rem;">
+            <div>★ Assets 1 &amp; 2: Payment Processing + Personal Data — HIGH RISK (Score 6)</div>
+            <div>● Assets 3 &amp; 4: AI Engine + Mobile App — MODERATE RISK (Score 4)</div>
           </div>
         </div>
         <div class="nist-table">
-          <h4>// NIST CSF Control Mapping — Sample</h4>
+          <h4>// WTG Policy &amp; Control Mapping</h4>
           <table>
-            <thead><tr><th>Function</th><th>Control Domain</th><th>Status</th></tr></thead>
+            <thead><tr><th>Policy</th><th>Regulation</th><th>Status</th></tr></thead>
             <tbody>
-              <tr><td><span class="nist-fn fn-id">ID</span></td><td>Asset Management</td><td><span class="status-dot"><span class="dot impl"></span>Implemented</span></td></tr>
-              <tr><td><span class="nist-fn fn-id">ID</span></td><td>Risk Assessment</td><td><span class="status-dot"><span class="dot impl"></span>Implemented</span></td></tr>
-              <tr><td><span class="nist-fn fn-pr">PR</span></td><td>Access Control</td><td><span class="status-dot"><span class="dot impl"></span>Implemented</span></td></tr>
-              <tr><td><span class="nist-fn fn-pr">PR</span></td><td>Data Security</td><td><span class="status-dot"><span class="dot prog"></span>In Progress</span></td></tr>
-              <tr><td><span class="nist-fn fn-de">DE</span></td><td>Anomalies &amp; Events</td><td><span class="status-dot"><span class="dot prog"></span>In Progress</span></td></tr>
-              <tr><td><span class="nist-fn fn-rs">RS</span></td><td>Incident Response</td><td><span class="status-dot"><span class="dot impl"></span>Implemented</span></td></tr>
-              <tr><td><span class="nist-fn fn-rc">RC</span></td><td>Recovery Planning</td><td><span class="status-dot"><span class="dot plan"></span>Planned</span></td></tr>
+              <tr><td>Access Control &amp; Auth</td><td><span class="nist-fn fn-pr">PCI DSS</span> <span class="nist-fn fn-id">GDPR</span></td><td><span class="status-dot"><span class="dot impl"></span>Documented</span></td></tr>
+              <tr><td>Data Protection &amp; Privacy</td><td><span class="nist-fn fn-pr">PCI DSS</span> <span class="nist-fn fn-id">GDPR</span></td><td><span class="status-dot"><span class="dot impl"></span>Documented</span></td></tr>
+              <tr><td>Secure Remote Access</td><td><span class="nist-fn fn-pr">PCI DSS</span> <span class="nist-fn fn-id">GDPR</span></td><td><span class="status-dot"><span class="dot impl"></span>Documented</span></td></tr>
+              <tr><td>Incident Response</td><td><span class="nist-fn fn-rs">PCI DSS</span> <span class="nist-fn fn-id">GDPR</span></td><td><span class="status-dot"><span class="dot impl"></span>Documented</span></td></tr>
+              <tr><td>SQL Injection Controls</td><td><span class="nist-fn fn-pr">PCI DSS</span></td><td><span class="status-dot"><span class="dot impl"></span>Controls Mapped</span></td></tr>
+              <tr><td>OAuth 2.0 / MFA</td><td><span class="nist-fn fn-pr">PCI DSS</span> <span class="nist-fn fn-id">GDPR</span></td><td><span class="status-dot"><span class="dot impl"></span>Recommended</span></td></tr>
+              <tr><td>CSPM / Cloud Security</td><td><span class="nist-fn fn-de">NIST</span></td><td><span class="status-dot"><span class="dot prog"></span>Recommended</span></td></tr>
             </tbody>
           </table>
         </div>
@@ -489,33 +602,31 @@ footer{padding:2.5rem 5vw;border-top:1px solid var(--border);display:flex;justif
 <div class="s-divider"></div>
 
 <!-- SKILLS -->
-<section id="skills" class="alt-bg">
+<section id="skills">
   <div class="container">
-    <div class="reveal"><p class="sec-num">// 03</p><p class="sec-label">Skills</p><h2 class="sec-title">Technical &amp; Professional<br><em>Competencies</em></h2></div>
+    <div class="reveal"><p class="sec-num">// 04</p><p class="sec-label">Skills</p><h2 class="sec-title">Technical &amp; Professional<br><em>Competencies</em></h2></div>
     <div class="skills-container">
       <div class="skills-group reveal">
-        <h3>Cybersecurity Skills</h3>
-        <div class="skill-row"><div class="skill-row-top"><span class="skill-name">Risk Assessment &amp; Management</span><span class="skill-pct">92%</span></div><div class="skill-bar"><div class="skill-fill" data-w="92"></div></div></div>
-        <div class="skill-row"><div class="skill-row-top"><span class="skill-name">NIST Risk Management Framework</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill" data-w="90"></div></div></div>
-        <div class="skill-row"><div class="skill-row-top"><span class="skill-name">ISO 27001 / 27002</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div></div>
-        <div class="skill-row"><div class="skill-row-top"><span class="skill-name">Security Governance &amp; Policy</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-fill" data-w="88"></div></div></div>
-        <div class="skill-row"><div class="skill-row-top"><span class="skill-name">Threat Analysis &amp; Intelligence</span><span class="skill-pct">82%</span></div><div class="skill-bar"><div class="skill-fill" data-w="82"></div></div></div>
-        <div class="skill-row"><div class="skill-row-top"><span class="skill-name">Zero Trust Architecture</span><span class="skill-pct">75%</span></div><div class="skill-bar"><div class="skill-fill" data-w="75"></div></div></div>
-        <div class="skill-row"><div class="skill-row-top"><span class="skill-name">Compliance (HIPAA, PCI-DSS, GDPR)</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-fill" data-w="80"></div></div></div>
-        <div class="skill-row"><div class="skill-row-top"><span class="skill-name">Incident Response Planning</span><span class="skill-pct">78%</span></div><div class="skill-bar"><div class="skill-fill" data-w="78"></div></div></div>
+        <h3>Cybersecurity &amp; GRC Skills</h3>
+        <div class="skill-row"><div class="skill-row-top"><span class="skill-name">Risk Assessment &amp; Management</span><span class="skill-pct">95%</span></div><div class="skill-bar"><div class="skill-fill" data-w="95"></div></div></div>
+        <div class="skill-row"><div class="skill-row-top"><span class="skill-name">ISO 27001 / NIST / PCI DSS</span><span class="skill-pct">93%</span></div><div class="skill-bar"><div class="skill-fill" data-w="93"></div></div></div>
+        <div class="skill-row"><div class="skill-row-top"><span class="skill-name">Security Governance &amp; Policy</span><span class="skill-pct">92%</span></div><div class="skill-bar"><div class="skill-fill" data-w="92"></div></div></div>
+        <div class="skill-row"><div class="skill-row-top"><span class="skill-name">Incident Response &amp; Management</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-fill" data-w="88"></div></div></div>
+        <div class="skill-row"><div class="skill-row-top"><span class="skill-name">Vulnerability Assessment</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div></div>
+        <div class="skill-row"><div class="skill-row-top"><span class="skill-name">GDPR Compliance</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div></div>
+        <div class="skill-row"><div class="skill-row-top"><span class="skill-name">KYC / AML Compliance</span><span class="skill-pct">95%</span></div><div class="skill-bar"><div class="skill-fill" data-w="95"></div></div></div>
       </div>
       <div class="skills-group reveal">
         <h3>Technical &amp; Analytical Skills</h3>
-        <div class="skill-row"><div class="skill-row-top"><span class="skill-name">SQL &amp; Database Querying</span><span class="skill-pct">84%</span></div><div class="skill-bar"><div class="skill-fill" data-w="84"></div></div></div>
-        <div class="skill-row"><div class="skill-row-top"><span class="skill-name">BigQuery &amp; Cloud Analytics</span><span class="skill-pct">78%</span></div><div class="skill-bar"><div class="skill-fill" data-w="78"></div></div></div>
-        <div class="skill-row"><div class="skill-row-top"><span class="skill-name">Data Analytics &amp; Visualization</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-fill" data-w="80"></div></div></div>
-        <div class="skill-row"><div class="skill-row-top"><span class="skill-name">IT Support &amp; Systems</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div></div>
+        <div class="skill-row"><div class="skill-row-top"><span class="skill-name">SQL &amp; Data Analytics</span><span class="skill-pct">60%</span></div><div class="skill-bar"><div class="skill-fill" data-w="60"></div></div></div>
+        <div class="skill-row"><div class="skill-row-top"><span class="skill-name">Python</span><span class="skill-pct">35%</span></div><div class="skill-bar"><div class="skill-fill" data-w="35"></div></div></div>
+        <div class="skill-row"><div class="skill-row-top"><span class="skill-name">Security Report &amp; Policy Writing</span><span class="skill-pct">95%</span></div><div class="skill-bar"><div class="skill-fill" data-w="95"></div></div></div>
+        <div class="skill-row"><div class="skill-row-top"><span class="skill-name">Process Optimization</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill" data-w="90"></div></div></div>
         <div class="skill-row"><div class="skill-row-top"><span class="skill-name">Cloud Security Fundamentals</span><span class="skill-pct">72%</span></div><div class="skill-bar"><div class="skill-fill" data-w="72"></div></div></div>
-        <div class="skill-row"><div class="skill-row-top"><span class="skill-name">Security Report Writing</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill" data-w="90"></div></div></div>
         <div style="margin-top:2rem;">
           <p style="font-family:var(--mono);font-size:.65rem;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;margin-bottom:1rem;">Tools &amp; Platforms</p>
           <div class="tech-chips">
-            <span class="t-chip">Splunk</span><span class="t-chip">Microsoft SQL</span><span class="t-chip">BigQuery</span><span class="t-chip">Google Workspace</span><span class="t-chip">Microsoft 365</span><span class="t-chip gold">NIST CSF</span><span class="t-chip gold">MITRE ATT&amp;CK</span><span class="t-chip">ServiceNow</span><span class="t-chip">Tableau</span><span class="t-chip">Excel / Power BI</span>
+            <span class="t-chip">SQL</span><span class="t-chip">Python</span><span class="t-chip">BigQuery</span><span class="t-chip">Microsoft 365</span><span class="t-chip gold">ISO 27001</span><span class="t-chip gold">NIST CSF</span><span class="t-chip gold">PCI DSS</span><span class="t-chip gold">MITRE ATT&amp;CK</span><span class="t-chip">Power BI</span><span class="t-chip">ServiceNow</span>
           </div>
         </div>
       </div>
@@ -525,38 +636,64 @@ footer{padding:2.5rem 5vw;border-top:1px solid var(--border);display:flex;justif
 
 <div class="s-divider"></div>
 
-<!-- CERTIFICATIONS -->
-<section id="certifications">
+<!-- EDUCATION -->
+<section id="education" class="alt-bg">
   <div class="container">
-    <div class="reveal"><p class="sec-num">// 04</p><p class="sec-label">Education &amp; Certifications</p><h2 class="sec-title">Academic Foundation &amp;<br><em>Credentials</em></h2></div>
+    <div class="reveal"><p class="sec-num">// 05</p><p class="sec-label">Education &amp; Certifications</p><h2 class="sec-title">Academic Foundation &amp;<br><em>Credentials</em></h2></div>
     <div class="edu-certs">
-      <div class="edu-block reveal">
-        <div class="inst">University of Dallas</div>
-        <h3>MS Cybersecurity Intelligence</h3>
-        <div class="deg">Graduate Program · Irving, Texas · In Progress</div>
-        <div class="coursework">
-          <h5>Relevant Coursework</h5>
+      <div style="display:flex;flex-direction:column;gap:1.5rem;" class="reveal">
+        <div class="edu-block">
+          <div class="inst">University of Dallas · Irving, TX</div>
+          <h3>MS Cyber Intelligence</h3>
+          <div class="deg">Expected May 2026 · In Progress</div>
           <div class="cw-list">
+            <div class="cw-item">Strategic Cybersecurity Practicum</div>
             <div class="cw-item">Cybersecurity Risk Management</div>
             <div class="cw-item">Cyber Threat Intelligence</div>
-            <div class="cw-item">Security Governance &amp; Policy</div>
-            <div class="cw-item">Digital Forensics &amp; Incident Response</div>
-            <div class="cw-item">Network Security &amp; Architecture</div>
-            <div class="cw-item">Compliance &amp; Regulatory Frameworks</div>
-            <div class="cw-item">Data Analytics for Cybersecurity</div>
-            <div class="cw-item">Critical Infrastructure Protection</div>
+            <div class="cw-item">Security Governance and Policy</div>
+            <div class="cw-item">Digital Forensics</div>
+            <div class="cw-item">Compliance for Cybersecurity</div>
+            <div class="cw-item">AI for Business</div>
+            <div class="cw-item">Cloud Computing &amp; AI</div>
+            <div class="cw-item">Network Security</div>
+            <div class="cw-item">Forecasting Methods</div>
           </div>
         </div>
+        <div class="edu-block gold-top">
+          <div class="inst">Nile University of Nigeria · Abuja</div>
+          <h3>MBA – Human Resources Management</h3>
+          <div class="deg">September 2022 · Completed</div>
+        </div>
+        <div class="edu-block gold-top">
+          <div class="inst">Ebonyi State University · Abakaliki</div>
+          <h3>BA – Philosophy</h3>
+          <div class="deg">September 2007 · Completed</div>
+        </div>
       </div>
-      <div class="edu-block reveal">
-        <div class="inst">Certifications</div>
-        <h3>Professional Credentials</h3>
-        <div class="deg">Earned &amp; Planned Certifications</div>
-        <div class="cert-grid" style="margin-top:1.5rem;">
-          <div class="cert-badge"><div class="cert-icon">🏅</div><div class="cert-name">CISSP</div><div class="cert-status">Planned · 2025–2026</div></div>
-          <div class="cert-badge"><div class="cert-icon">🏅</div><div class="cert-name">CISA</div><div class="cert-status">Planned · 2025–2026</div></div>
-          <div class="cert-badge"><div class="cert-icon">🏅</div><div class="cert-name">AIGP</div><div class="cert-status">Planned · AI Governance</div></div>
-          <div class="cert-badge earned"><div class="cert-icon">🎓</div><div class="cert-name">Add Your Cert Here</div><div class="cert-status">Replace with earned certs</div></div>
+      <div class="reveal">
+        <div class="edu-block" style="margin-bottom:1.5rem;">
+          <div class="inst">Professional Certifications</div>
+          <h3>Credentials</h3>
+          <div class="deg">Earned &amp; Planned</div>
+          <div class="cert-grid" style="margin-top:1.2rem;">
+            <div class="cert-badge"><div class="cert-icon">🏅</div><div class="cert-name">CISSP</div><div class="cert-status">Planned</div></div>
+            <div class="cert-badge"><div class="cert-icon">🏅</div><div class="cert-name">CISA</div><div class="cert-status">Planned</div></div>
+            <div class="cert-badge"><div class="cert-icon">🏅</div><div class="cert-name">AIGP</div><div class="cert-status">AI Governance</div></div>
+            <div class="cert-badge"><div class="cert-icon">🎓</div><div class="cert-name">Add Earned Certs</div><div class="cert-status">Update here</div></div>
+          </div>
+        </div>
+        <div class="edu-block" style="border-left:3px solid var(--teal);padding-left:1.5rem;">
+          <div class="inst">Key Regulatory Expertise</div>
+          <h3>Frameworks Applied</h3>
+          <div class="cw-list" style="margin-top:1rem;">
+            <div class="cw-item">ISO 27001 — Information Security Management</div>
+            <div class="cw-item">NIST SP 800-30 / 800-39 / 800-53 — Risk Management</div>
+            <div class="cw-item">PCI DSS v4.0 — Payment Card Security</div>
+            <div class="cw-item">GDPR — EU Data Protection Regulation</div>
+            <div class="cw-item">KYC / AML — Financial Crime Compliance</div>
+            <div class="cw-item">MITRE ATT&amp;CK — Threat Intelligence</div>
+            <div class="cw-item">OWASP — Application Security</div>
+          </div>
         </div>
       </div>
     </div>
@@ -566,41 +703,44 @@ footer{padding:2.5rem 5vw;border-top:1px solid var(--border);display:flex;justif
 <div class="s-divider"></div>
 
 <!-- RESUME -->
-<section id="resume" class="alt-bg">
+<section id="resume">
   <div class="container">
-    <div class="reveal"><p class="sec-num">// 05</p><p class="sec-label">Résumé / CV</p><h2 class="sec-title">Professional<br><em>Profile</em></h2></div>
+    <div class="reveal"><p class="sec-num">// 06</p><p class="sec-label">Résumé / CV</p><h2 class="sec-title">Professional<br><em>Profile</em></h2></div>
     <div class="resume-wrap">
       <div class="resume-preview reveal">
         <div class="rv-name">Mercy Oji</div>
-        <div class="rv-title">Cybersecurity Risk &amp; Governance | GRC Analyst</div>
+        <div class="rv-title">Cybersecurity Risk &amp; Governance | GRC | IT Security | MBA</div>
         <div class="rv-section">
           <h4>Education</h4>
-          <div class="rv-item"><div class="ri-title">MS Cybersecurity Intelligence</div><div class="ri-sub">University of Dallas · Irving, TX · In Progress</div><div class="ri-desc">Focus on GRC, threat analysis, risk assessment, and cybersecurity strategy.</div></div>
-          <div class="rv-item"><div class="ri-title">[ Bachelor's Degree — Add Here ]</div><div class="ri-sub">[ Institution · Year ]</div><div class="ri-desc">[ Brief description ]</div></div>
+          <div class="rv-item"><div class="ri-title">MS Cyber Intelligence (Expected May 2026)</div><div class="ri-sub">University of Dallas · Irving, TX</div></div>
+          <div class="rv-item"><div class="ri-title">MBA – Human Resources Management (2022)</div><div class="ri-sub">Nile University of Nigeria · Abuja</div></div>
+          <div class="rv-item"><div class="ri-title">BA – Philosophy (2007)</div><div class="ri-sub">Ebonyi State University · Abakaliki</div></div>
         </div>
         <div class="rv-section">
           <h4>Experience</h4>
-          <div class="rv-item"><div class="ri-title">IT Support Specialist</div><div class="ri-sub">[ Organization · Dates ]</div><div class="ri-desc">Provided technical support, maintained system security configurations, and contributed to IT governance documentation and user access management.</div></div>
+          <div class="rv-item"><div class="ri-title">IT Support – University of Dallas</div><div class="ri-sub">Aug 2024 – Present · Incident Response</div></div>
+          <div class="rv-item"><div class="ri-title">Deputy Manager, Security Risk &amp; Compliance – CBN</div><div class="ri-sub">May 2018 – June 2024 · ISO 27001 · NIST · PCI · SSP · POAMs</div></div>
+          <div class="rv-item"><div class="ri-title">Service/Risk Manager – Heritage Bank PLC</div><div class="ri-sub">Oct 2013 – Apr 2018 · KYC/AML · Team of 15 · 50% Failure Reduction</div></div>
         </div>
         <div class="rv-section">
-          <h4>Key Projects</h4>
-          <div class="rv-item"><div class="ri-title">Strategic Cybersecurity Risk Assessment</div><div class="ri-sub">NIST RMF · ISO 27001 · Risk Mitigation</div><div class="ri-desc">End-to-end risk assessment identifying 23 assets and designing 18 mitigation controls.</div></div>
+          <h4>Core Skills</h4>
+          <div class="ri-desc" style="color:var(--light);font-size:.85rem;line-height:1.8;">GRC · Risk Assessment · ISO 27001 · NIST · PCI DSS · GDPR · KYC/AML · Incident Response · SQL · Python · Security Governance · Threat Analysis · Vulnerability Assessment · Security Policy Writing</div>
         </div>
       </div>
       <div class="resume-actions reveal">
         <div class="action-card">
-          <h4>Download Résumé</h4>
-          <p>Access the full PDF version of Mercy's résumé including detailed work history, academic achievements, and certifications.</p>
-          <a class="download-btn" href="YOUR_RESUME_LINK_HERE" target="_blank" onclick="if(this.href.includes('YOUR_')){alert('Add your resume link: open index.html and replace YOUR_RESUME_LINK_HERE with your Google Drive or GitHub link.');return false;}">⬇ Download PDF</a>
+          <h4>Download Full Résumé</h4>
+          <p>Download the complete PDF version of Mercy's résumé including full work history and achievements.</p>
+          <a class="download-btn" href="https://mercyoji.github.io/mercy-portfolio/OJI_Resume.pdf" target="_blank">⬇ Download PDF</a>
         </div>
         <div class="action-card">
           <h4>View on LinkedIn</h4>
-          <p>Connect on LinkedIn for the most up-to-date professional profile, endorsements, and recommendations.</p>
-          <a class="download-btn" href="https://linkedin.com/in/mercyoji" target="_blank">↗ LinkedIn Profile</a>
+          <p>Connect for the most up-to-date professional profile, endorsements, and recommendations.</p>
+          <a class="download-btn" href="https://www.linkedin.com/in/mercy-oji-mba-94943774" target="_blank">↗ LinkedIn Profile</a>
         </div>
         <div class="action-card">
           <h4>Portfolio URL</h4>
-          <p>Once live, add this link to your LinkedIn profile and résumé for maximum recruiter visibility.</p>
+          <p>Share this link on your résumé and LinkedIn for maximum recruiter visibility.</p>
           <div style="font-family:var(--mono);font-size:.65rem;color:var(--teal);padding:.6rem;background:var(--teal-dim);border:1px solid rgba(0,200,170,.2);">mercyoji.github.io/mercy-portfolio</div>
         </div>
       </div>
@@ -611,20 +751,21 @@ footer{padding:2.5rem 5vw;border-top:1px solid var(--border);display:flex;justif
 <div class="s-divider"></div>
 
 <!-- DOCUMENTS HUB -->
-<section id="documents">
+<section id="documents" class="alt-bg">
   <div class="container">
-    <div class="reveal"><p class="sec-num">// 06</p><p class="sec-label">Documents &amp; Resources</p><h2 class="sec-title">My Work &amp;<br><em>Portfolio Files</em></h2></div>
-    <p class="docs-intro reveal">All key documents related to my academic work, professional experience, certifications, and research. Click <strong>View</strong> to preview or <strong>Download</strong> to save. See the <strong>How to Add Your Documents</strong> guide below to link your own files.</p>
+    <div class="reveal"><p class="sec-num">// 07</p><p class="sec-label">Documents &amp; Resources</p><h2 class="sec-title">My Work &amp;<br><em>Portfolio Files</em></h2></div>
+    <p class="docs-intro reveal">Key documents from my academic and professional work. All files marked <strong>Live</strong> are available for immediate download. Click <strong>Preview</strong> to view in your browser.</p>
     <div class="docs-categories">
+
       <div class="doc-category reveal">
         <h3>📄 Résumé &amp; CV <span>// Professional Documents</span></h3>
         <div class="doc-grid">
           <div class="doc-card">
-            <div class="doc-card-top"><div class="doc-icon">📋</div><span class="doc-badge pending">Add File</span></div>
-            <div class="doc-title">Master Résumé</div>
-            <div class="doc-desc">Full professional résumé covering education, experience, skills, and GRC achievements.</div>
+            <div class="doc-card-top"><div class="doc-icon">📋</div><span class="doc-badge live">Live</span></div>
+            <div class="doc-title">Master Résumé — Mercy Oji</div>
+            <div class="doc-desc">Full professional résumé covering 10+ years in risk management, GRC, central banking, and IT security. Includes CBN, Heritage Bank, and University of Dallas experience.</div>
             <div class="doc-actions">
-              <a class="doc-btn primary" href="#" onclick="docAction('https://mercyoji.github.io/mercy-portfolio/OJI_Resume.pdf','Master Résumé');return false;">⬇ Download PDF</a>
+              <a class="doc-btn primary" href="https://mercyoji.github.io/mercy-portfolio/OJI_Resume.pdf" target="_blank">⬇ Download PDF</a>
               <a class="doc-btn secondary" href="#" onclick="previewDoc('https://mercyoji.github.io/mercy-portfolio/OJI_Resume.pdf','Master Résumé');return false;">👁 Preview</a>
             </div>
           </div>
@@ -638,109 +779,86 @@ footer{padding:2.5rem 5vw;border-top:1px solid var(--border);display:flex;justif
           </div>
         </div>
       </div>
+
       <div class="doc-category reveal">
-        <h3>🔬 Academic Projects <span>// Coursework &amp; Research</span></h3>
+        <h3>🔬 Academic Projects <span>// CYBS 8396 · Strategic Cybersecurity Practicum</span></h3>
         <div class="doc-grid">
           <div class="doc-card">
-            <div class="doc-card-top"><div class="doc-icon">🛡️</div><span class="doc-badge pending">Add File</span></div>
-            <div class="doc-title">Strategic Cybersecurity Risk Assessment</div>
-            <div class="doc-desc">Full risk assessment report using NIST RMF &amp; ISO 27001 — asset inventory, vulnerability analysis, mitigation controls.</div>
+            <div class="doc-card-top"><div class="doc-icon">📜</div><span class="doc-badge live">Live</span></div>
+            <div class="doc-title">Cybersecurity Policy Suite – Wandr Travel Group</div>
+            <div class="doc-desc">Four enforceable cybersecurity policies (Access Control, Data Protection, Secure Remote Access, Incident Response) aligned with PCI DSS v4.0 and GDPR. Authored as simulated CISO of WTG.</div>
             <div class="doc-actions">
-              <a class="doc-btn primary" href="#" onclick="docAction('https://mercyoji.github.io/mercy-portfolio/Oji Risk Assignment.pdf','Risk Assessment');return false;">⬇ Download</a>
-              <a class="doc-btn secondary" href="#" onclick="previewDoc('https://mercyoji.github.io/mercy-portfolio/Oji Risk Assignment.pdf','Risk Assessment');return false;">👁 Preview</a>
+              <a class="doc-btn primary" href="https://mercyoji.github.io/mercy-portfolio/Oji%20Policy%20Assignment.pdf" target="_blank">⬇ Download</a>
+              <a class="doc-btn secondary" href="#" onclick="previewDoc('https://mercyoji.github.io/mercy-portfolio/Oji%20Policy%20Assignment.pdf','Cybersecurity Policy Suite');return false;">👁 Preview</a>
             </div>
           </div>
           <div class="doc-card">
-            <div class="doc-card-top"><div class="doc-icon">📊</div><span class="doc-badge pending">Add File</span></div>
-            <div class="doc-title">Strategic Cybersecurity Plan</div>
-            <div class="doc-desc">3-year enterprise cybersecurity roadmap with governance framework, policy drafts, and compliance mapping.</div>
+            <div class="doc-card-top"><div class="doc-icon">🛡️</div><span class="doc-badge live">Live</span></div>
+            <div class="doc-title">Risk Management Report – Wandr Travel Group</div>
+            <div class="doc-desc">Strategic cybersecurity risk management plan using NIST SP 800-30/800-39. Assessed 4 critical assets, produced risk heat map, risk register, and executive risk appetite statement aligned with PCI DSS and GDPR.</div>
             <div class="doc-actions">
-              <a class="doc-btn primary" href="#" onclick="docAction('YOUR_CYBER_PLAN_LINK_HERE','Cybersecurity Plan');return false;">⬇ Download</a>
-              <a class="doc-btn secondary" href="#" onclick="previewDoc('YOUR_CYBER_PLAN_LINK_HERE','Cybersecurity Plan');return false;">👁 Preview</a>
-            </div>
-          </div>
-          <div class="doc-card">
-            <div class="doc-card-top"><div class="doc-icon">🗄️</div><span class="doc-badge pending">Add File</span></div>
-            <div class="doc-title">SQL Analytics Project</div>
-            <div class="doc-desc">Security data analytics using SQL &amp; BigQuery — anomaly detection, access log analysis, dashboard reporting.</div>
-            <div class="doc-actions">
-              <a class="doc-btn primary" href="#" onclick="docAction('YOUR_SQL_PROJECT_LINK_HERE','SQL Project');return false;">⬇ Download</a>
-              <a class="doc-btn secondary" href="#" onclick="previewDoc('YOUR_SQL_PROJECT_LINK_HERE','SQL Project');return false;">👁 Preview</a>
+              <a class="doc-btn primary" href="https://mercyoji.github.io/mercy-portfolio/Oji%20Risk%20Assignment.pdf" target="_blank">⬇ Download</a>
+              <a class="doc-btn secondary" href="#" onclick="previewDoc('https://mercyoji.github.io/mercy-portfolio/Oji%20Risk%20Assignment.pdf','Risk Management Report');return false;">👁 Preview</a>
             </div>
           </div>
           <div class="doc-card gold-accent">
             <div class="doc-card-top"><div class="doc-icon">➕</div><span class="doc-badge optional">Optional</span></div>
-            <div class="doc-title">Add Another Project</div>
-            <div class="doc-desc">Upload any additional coursework, research paper, or academic project to showcase to employers.</div>
-            <div class="doc-actions"><a class="doc-btn gold" href="#how-to-upload">📎 How to Add</a></div>
+            <div class="doc-title">Add Future Projects</div>
+            <div class="doc-desc">Upload additional coursework, research papers, or capstone projects from upcoming semesters.</div>
+            <div class="doc-actions"></div>
           </div>
         </div>
       </div>
+
       <div class="doc-category reveal">
         <h3>🏅 Certifications &amp; Credentials <span>// Official Documents</span></h3>
         <div class="doc-grid">
           <div class="doc-card">
             <div class="doc-card-top"><div class="doc-icon">🎓</div><span class="doc-badge pending">Add File</span></div>
-            <div class="doc-title">University of Dallas — Transcript</div>
-            <div class="doc-desc">Official or unofficial academic transcript from the MS Cybersecurity Intelligence program.</div>
+            <div class="doc-title">Academic Transcript — University of Dallas</div>
+            <div class="doc-desc">Official or unofficial transcript from the MS Cyber Intelligence program at the University of Dallas.</div>
             <div class="doc-actions"><a class="doc-btn primary" href="#" onclick="docAction('YOUR_TRANSCRIPT_LINK_HERE','Transcript');return false;">⬇ Download</a></div>
           </div>
           <div class="doc-card">
             <div class="doc-card-top"><div class="doc-icon">🏆</div><span class="doc-badge pending">Add File</span></div>
-            <div class="doc-title">Certifications</div>
-            <div class="doc-desc">Copies of earned certifications — Google Cybersecurity, CompTIA, or others. Add as earned.</div>
-            <div class="doc-actions">
-              <a class="doc-btn primary" href="#" onclick="docAction('YOUR_CERT_LINK_HERE','Certifications');return false;">⬇ Download</a>
-              <a class="doc-btn secondary" href="#" onclick="previewDoc('YOUR_CERT_LINK_HERE','Certifications');return false;">👁 Preview</a>
-            </div>
+            <div class="doc-title">Professional Certifications</div>
+            <div class="doc-desc">Copies of earned certifications — CISSP, CISA, AIGP or others. Add as they are earned.</div>
+            <div class="doc-actions"><a class="doc-btn primary" href="#" onclick="docAction('YOUR_CERT_LINK_HERE','Certifications');return false;">⬇ Download</a></div>
           </div>
           <div class="doc-card gold-accent">
             <div class="doc-card-top"><div class="doc-icon">📜</div><span class="doc-badge future">Future</span></div>
             <div class="doc-title">CISSP / CISA / AIGP</div>
             <div class="doc-desc">Placeholder for planned professional certifications. Add official certificates once earned.</div>
-            <div class="doc-actions"><a class="doc-btn gold" href="#certifications">📌 View Plans</a></div>
+            <div class="doc-actions"><a class="doc-btn gold" href="#education">📌 View Plans</a></div>
           </div>
         </div>
       </div>
+
       <div class="doc-category reveal">
-        <h3>📁 Research &amp; Other Files <span>// Optional Additions</span></h3>
+        <h3>📁 Additional Files <span>// Optional</span></h3>
         <div class="doc-grid">
           <div class="doc-card gold-accent">
             <div class="doc-card-top"><div class="doc-icon">🔎</div><span class="doc-badge optional">Optional</span></div>
             <div class="doc-title">Research Paper / White Paper</div>
-            <div class="doc-desc">Any published or academic research in cybersecurity governance, risk intelligence, or compliance.</div>
-            <div class="doc-actions"><a class="doc-btn gold" href="#how-to-upload">📎 Add File</a></div>
+            <div class="doc-desc">Any published or academic research in cybersecurity governance, risk intelligence, or compliance frameworks.</div>
+            <div class="doc-actions"></div>
           </div>
           <div class="doc-card gold-accent">
             <div class="doc-card-top"><div class="doc-icon">📈</div><span class="doc-badge optional">Optional</span></div>
             <div class="doc-title">Professional References</div>
-            <div class="doc-desc">Reference sheet listing professional or academic contacts who can speak to your skills.</div>
-            <div class="doc-actions"><a class="doc-btn gold" href="#how-to-upload">📎 Add File</a></div>
-          </div>
-          <div class="doc-card gold-accent">
-            <div class="doc-card-top"><div class="doc-icon">🗂️</div><span class="doc-badge optional">Optional</span></div>
-            <div class="doc-title">Portfolio Presentation</div>
-            <div class="doc-desc">A slide deck or visual summary of academic and professional accomplishments for interviews.</div>
-            <div class="doc-actions"><a class="doc-btn gold" href="#how-to-upload">📎 Add File</a></div>
+            <div class="doc-desc">Reference sheet with professional or academic contacts who can speak to your expertise.</div>
+            <div class="doc-actions"></div>
           </div>
         </div>
       </div>
+
     </div>
-    <div class="how-to-upload reveal" id="how-to-upload">
-      <h4>// How to Add Your Documents</h4>
-      <div class="how-to-steps">
-        <div class="how-to-step">Upload your file to <strong>Google Drive</strong>, right-click it → <em>Get link</em> → set to "Anyone with the link can view".</div>
-        <div class="how-to-step">Copy the share link. It looks like: <code>https://drive.google.com/file/d/YOUR_FILE_ID/view</code></div>
-        <div class="how-to-step">Open <code>index.html</code> in a text editor. Search for the placeholder you want to update (e.g. <code>YOUR_RESUME_LINK_HERE</code>).</div>
-        <div class="how-to-step">Replace the placeholder text with your actual Google Drive link and save the file.</div>
-        <div class="how-to-step">Alternatively, upload PDFs directly to your GitHub repo and link them as <code>https://mercyoji.github.io/mercy-portfolio/resume.pdf</code></div>
-        <div class="how-to-step">Commit the updated file to GitHub — your documents will be live within 60 seconds!</div>
-      </div>
+    
     </div>
   </div>
 </section>
 
-<!-- PDF PREVIEW MODAL -->
+<!-- PDF MODAL -->
 <div class="pdf-modal" id="pdfModal">
   <div class="pdf-modal-inner">
     <div class="pdf-modal-header">
@@ -757,9 +875,9 @@ footer{padding:2.5rem 5vw;border-top:1px solid var(--border);display:flex;justif
 <div class="s-divider"></div>
 
 <!-- CONTACT -->
-<section id="contact" class="alt-bg">
+<section id="contact">
   <div class="container">
-    <div class="reveal"><p class="sec-num">// 07</p><p class="sec-label">Contact</p><h2 class="sec-title">Let's Build Something<br><em>Secure Together</em></h2></div>
+    <div class="reveal"><p class="sec-num">// 08</p><p class="sec-label">Contact</p><h2 class="sec-title">Let's Build Something<br><em>Secure Together</em></h2></div>
     <div class="contact-grid">
       <form class="contact-form reveal" onsubmit="handleForm(event)">
         <div class="form-row">
@@ -767,17 +885,17 @@ footer{padding:2.5rem 5vw;border-top:1px solid var(--border);display:flex;justif
           <div class="fg"><label>Last Name</label><input type="text" placeholder="Smith"/></div>
         </div>
         <div class="fg"><label>Email Address</label><input type="email" placeholder="jane@company.com" required/></div>
-        <div class="fg"><label>Subject</label><input type="text" placeholder="Cybersecurity opportunity / collaboration..."/></div>
+        <div class="fg"><label>Subject</label><input type="text" placeholder="GRC opportunity / collaboration / inquiry..."/></div>
         <div class="fg"><label>Message</label><textarea placeholder="I'd love to discuss cybersecurity risk management, governance strategies, or potential opportunities..."></textarea></div>
         <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Send Message →</button>
       </form>
       <div class="reveal">
         <h3 class="contact-headline">Open to Opportunities &amp; Collaboration</h3>
-        <p class="contact-subtext">Feel free to connect to discuss cybersecurity risk management, governance frameworks, and security strategy. I am actively seeking GRC analyst roles and internship opportunities.</p>
+        <p class="contact-subtext">Feel free to connect to discuss cybersecurity risk management, governance frameworks, GRC analyst roles, or security strategy. I bring over 10 years of real-world compliance and risk experience across banking, central banking, and IT security.</p>
         <div class="contact-items">
-          <div class="ci"><div class="ci-icon">📧</div><div><div class="ci-label">Email</div><div class="ci-value"><a href="mailto:ojimercy@yahoo.com">ojimercy@yahoo.com</a></div></div></div>
-          <div class="ci"><div class="ci-icon">💼</div><div><div class="ci-label">LinkedIn</div><div class="ci-value"><a href="https://linkedin.com/in/mercyoji" target="_blank">linkedin.com/in/mercyoji</a></div></div></div>
-          <div class="ci"><div class="ci-icon">🎓</div><div><div class="ci-label">Institution</div><div class="ci-value">University of Dallas</div></div></div>
+          <div class="ci"><div class="ci-icon">📧</div><div><div class="ci-label">Email</div><div class="ci-value"><a href="/cdn-cgi/l/email-protection#93fcf9fafef6e1f0ead3eaf2fbfcfcbdf0fcfe"><span class="__cf_email__" data-cfemail="19767370747c6b7a60596078717676377a7674">[email&#160;protected]</span></a></div></div></div>
+          <div class="ci"><div class="ci-icon">💼</div><div><div class="ci-label">LinkedIn</div><div class="ci-value"><a href="https://www.linkedin.com/in/mercy-oji-mba-94943774" target="_blank">linkedin.com/in/mercy-oji-mba-94943774</a></div></div></div>
+          <div class="ci"><div class="ci-icon">🎓</div><div><div class="ci-label">Institution</div><div class="ci-value">University of Dallas · Irving, TX</div></div></div>
           <div class="ci"><div class="ci-icon">📍</div><div><div class="ci-label">Location</div><div class="ci-value">Irving, Texas · Open to Remote</div></div></div>
         </div>
       </div>
@@ -787,20 +905,21 @@ footer{padding:2.5rem 5vw;border-top:1px solid var(--border);display:flex;justif
 
 <footer>
   <div class="footer-left">
-    <div class="fn">Mercy Oji</div>
-    <div class="ft">Cybersecurity Risk &amp; Governance Professional · MS Cybersecurity Intelligence · University of Dallas</div>
+    <div class="fn">Mercy Oji, MBA</div>
+    <div class="ft">Cybersecurity Risk &amp; Governance · MS Cyber Intelligence · University of Dallas</div>
   </div>
-  <div class="footer-right">© 2026 · <span>Built with purpose</span></div>
+  <div class="footer-right">© 2026 · <span>mercyoji.github.io/mercy-portfolio</span></div>
 </footer>
 
-<script>
-// Scroll reveal
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const revealObs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('on'); });
-}, { threshold: 0.08 });
+}, { threshold: 0, rootMargin: "0px 0px -50px 0px" });
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-// Skill bars
+// Fallback: reveal all sections after short delay (GitHub Pages fix)
+setTimeout(() => { document.querySelectorAll('.reveal').forEach(el => el.classList.add('on')); }, 500);
+
 const skillObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if(e.isIntersecting) {
@@ -812,7 +931,6 @@ const skillObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.2 });
 document.querySelectorAll('.skills-group').forEach(g => skillObs.observe(g));
 
-// Contact form
 function handleForm(e) {
   e.preventDefault();
   const btn = e.target.querySelector('button');
@@ -821,10 +939,9 @@ function handleForm(e) {
   setTimeout(() => { btn.textContent = 'Send Message →'; btn.style.background = ''; }, 3000);
 }
 
-// Document actions
 function docAction(url, title) {
   if (!url || url.includes('YOUR_')) {
-    alert('📎 To add this document:\n\n1. Upload your file to Google Drive\n2. Copy the share link\n3. Open index.html and replace the placeholder (e.g. YOUR_RESUME_LINK_HERE) with your link\n\nSee the How to Add guide at the bottom of the Documents section.');
+    alert('To add this document: Upload your PDF to GitHub repo, then update the link in index.html.');
     return;
   }
   window.open(url, '_blank');
@@ -832,33 +949,10 @@ function docAction(url, title) {
 
 function previewDoc(url, title) {
   if (!url || url.includes('YOUR_')) {
-    alert('📎 Add your file link first. See the How to Add guide in the Documents section.');
+    alert('Add your file link first.');
     return;
   }
   let embedUrl = url;
   if (url.includes('drive.google.com/file/d/')) {
     const match = url.match(/\/d\/([^\/]+)/);
-    if (match) embedUrl = 'https://drive.google.com/file/d/' + match[1] + '/preview';
-  }
-  document.getElementById('modalTitle').textContent = title;
-  document.getElementById('pdfFrame').src = embedUrl;
-  document.getElementById('directLink').href = url;
-  document.getElementById('pdfModal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeModal() {
-  document.getElementById('pdfModal').classList.remove('open');
-  document.getElementById('pdfFrame').src = '';
-  document.body.style.overflow = '';
-}
-
-document.getElementById('pdfModal').addEventListener('click', function(e) {
-  if (e.target === this) closeModal();
-});
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeModal();
-});
-</script>
-</body>
-</html>
+    if (match) embedUrl = 'https://drive.google.com/file
